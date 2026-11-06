@@ -1,0 +1,27 @@
+{
+  "resource_changes": [
+    {
+      "address": "aws_iam_role.this",
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"sts:AssumeRole\"}]}"
+        }
+      }
+    },
+    {
+      "address": "aws_iam_role_policy.s3_read",
+      "mode": "managed",
+      "type": "aws_iam_role_policy",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"s3:*\"],\"Resource\":[\"*\"]}]}"
+        }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,6 @@
+region             = "us-east-1"
+role_name          = "ClinicReadOnlyRole"
+trusted_account_id = "111111111111"
+external_id        = "replace-with-a-secret-value"
+bucket_arns        = ["arn:aws:s3:::clinic-demo"]
+
