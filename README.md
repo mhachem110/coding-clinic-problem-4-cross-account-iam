@@ -4,6 +4,8 @@
 
 Terraform defines a role that a named CI account can assume only when it supplies an external ID. The attached policy grants only `s3:ListBucket` and `s3:GetObject` on named bucket ARNs. A small Python checker validates the Terraform plan before deployment and rejects public trust, wildcard resources, or actions outside that allowlist.
 
+See [`DESIGN.md`](DESIGN.md) for the trust boundary and policy validation flow.
+
 ## Files
 
 - `main.tf`, `variables.tf`, `outputs.tf`, `versions.tf`: reusable Terraform role and least-privilege policy.
